@@ -1,0 +1,62 @@
+body{
+   
+background-color: green;
+
+}
+
+
+    
+ul li{
+    
+    color: rgb(2, 1, 1);
+    list-style-type: none;
+    text-align: left;
+    
+}
+.container{
+    margin: 0 auto;
+    text-align: center;
+    max-width: 500px;
+    border: none;
+    background-color: rgb(77, 125, 212);
+    
+}
+
+
+#in{
+    height:35px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+#add{
+    background-color: rgb(34, 226, 200);
+    width: 150px;
+    height: 40px;
+    border: solid;
+    border-radius: 5px;
+}
+ul{
+    margin: 0 auto;
+    padding: 0;
+}
+li span{
+    float: right;
+    cursor:default;
+    background-color: white;
+    text-align: center;
+    width: 18px;
+    border: solid 1px black;
+    transition: 0.3s;
+}
+
+li span:hover{
+    color: white;
+    background-color: red;
+    transition: 0.3s;
+}
+.q{
+    position: absolute;
+    z-index: 9999;
+    
+}
