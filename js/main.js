@@ -63,17 +63,6 @@ out.addEventListener("change", function(event){
 
 
 
-out.addEventListener("click", function (event){
-    arr.forEach(function(item, i){
-        if(item.todo === event.target.innerHTML){
-                arr.splice(i,1)
-            display ()
-            localStorage.setItem("todo", JSON.stringify(arr))
-        }
-    })
-    
-    
-})
 
 
 function deletee(i){
@@ -82,6 +71,6 @@ function deletee(i){
        localStorage.setItem("todo", JSON.stringify(arr))
                 }
     
-        
-
-
+    function edit(i){
+       document.write()
+    }
