@@ -1,6 +1,6 @@
 body{
    
-background-color: green;
+    background: linear-gradient(to right, #d2f6d8, #60923f);
 
 }
 
@@ -18,7 +18,7 @@ ul li{
     text-align: center;
     max-width: 500px;
     border: none;
-    background-color: rgb(77, 125, 212);
+    background: linear-gradient(to right, #d2def6, #473f92);
     
 }
 
@@ -30,7 +30,7 @@ ul li{
     border-radius: 5px;
 }
 #add{
-    background-color: rgb(34, 226, 200);
+    background-color: rgb(147, 193, 245);
     width: 150px;
     height: 40px;
     border: solid;

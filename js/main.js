@@ -3,6 +3,7 @@ let inn = document.getElementById("in");
 let outt = document.getElementById("out");
 let arr = [];
 let closee = document.getElementById("closee")
+
 if(localStorage.getItem("todo")){
     arr = JSON.parse(localStorage.getItem("todo"))
     display()
@@ -10,7 +11,7 @@ if(localStorage.getItem("todo")){
 
 
 addB.addEventListener("click", function (){
-    if(!inn.value ) return;
+    if(!inn.value) return;
     let nToDo = {
         todo: inn.value,
         checked: false,
@@ -31,8 +32,7 @@ function display (){
       <li>
       <input type= "checkbox"  id= "item_${i}" ${item.checked ? "checked" : ""}>
       <label for= "item_${i}" class="${item.importand ? "importand" : ""}">${item.todo}</label>
-    <span id="closee" onclick="deletee()"}>X</span>
-    
+      <span class="closee" onclick="deletee(${i})">X</span>
      <hr></hr>
       </li>
       `;
@@ -49,12 +49,14 @@ out.addEventListener("change", function(event){
     let  forLable = out.querySelector("[for="+idInput+"]");
     let valueLable = forLable.innerHTML;
     
-    arr.forEach(function(item){
+    arr.forEach(function (item){
         if(item.todo === valueLable){
             item.checked = !item.checked;
             localStorage.setItem("todo", JSON.stringify(arr))
+            forLable && item.checked ? forLable.style.textDecoration = 'line-through' : forLable.style.textDecoration = 'none'
         }
     })
+    
 })
 
 
@@ -64,9 +66,7 @@ out.addEventListener("change", function(event){
 out.addEventListener("click", function (event){
     arr.forEach(function(item, i){
         if(item.todo === event.target.innerHTML){
-            if(onclick=event){
                 arr.splice(i,1)
-            }
             display ()
             localStorage.setItem("todo", JSON.stringify(arr))
         }
@@ -76,16 +76,12 @@ out.addEventListener("click", function (event){
 })
 
 
-function deletee(event){
-    arr.forEach(function(item, i){
-            if(onclick=event){
-                arr.splice(i,1)
-            display ()
-            localStorage.setItem("todo", JSON.stringify(arr))
-        }
-    })
+function deletee(i){
+       arr.splice(i,1);
+       display();
+       localStorage.setItem("todo", JSON.stringify(arr))
+                }
     
-            }        
         
 
 
